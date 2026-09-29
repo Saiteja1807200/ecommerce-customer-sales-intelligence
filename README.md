@@ -133,9 +133,12 @@ Sales Analysis       Customer Analysis
           Power BI Dashboard
                   |
                   v
-        Business Insights
+        Business Insights---
 
-## Business Problem
+## Project Workflow
+
+```
+### Business Problem
 
 E-commerce businesses generate large volumes of transactional data,but raw transaction records alone do not provide clear business insights.
 
