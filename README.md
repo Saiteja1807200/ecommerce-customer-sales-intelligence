@@ -134,3 +134,84 @@ Sales Analysis       Customer Analysis
                   |
                   v
         Business Insights
+
+## Business Problem
+
+E-commerce businesses generate large volumes of transactional data,but raw transaction records alone do not provide clear business insights.
+
+This project addresses several practical business questions:
+
+- How much revenue is being generated over time?
+- Which products contribute the most revenue?
+- Which countries generate the highest revenue?
+- Who are the highest-value customers?
+- Which customers purchase most frequently?
+- Which customers are loyal,and which may require retention efforts?
+- How can customer behavior be converted into actionable segments?
+- How can these insights be presented through an interactive dashboard?
+
+---
+
+## Key Performance Indicators
+
+The analysis produced the following core business KPIs:
+
+| Metric | Result |
+|---|---:|
+| Total Revenue | £10.64M |
+| Total Orders | 19,960 |
+| Identifiable Customers | 4,338 |
+| Unique Products | 3,922 |
+| Countries | 38 |
+| Average Order Value | £533.17 |
+| Valid Transactions After Cleaning | 524,878 |
+
+These KPIs provide a high-level view of the company's sales and customer activity.
+
+---
+
+## Data Quality Analysis
+
+The original dataset contained **541,909 transaction records**.
+
+The initial data-quality assessment identified:
+
+- 1,454 records with missing product descriptions
+- 135,080 records with missing Customer IDs
+- 5,268 duplicate records
+- 9,288 cancelled transactions
+- 10,624 transactions with non-positive quantities
+- 2,517 transactions with non-positive unit prices
+
+The analysis separated data-quality issues from legitimate missing customer identifiers.
+
+Transactions without a `CustomerID` were retained for overall sales analysis because they still contain useful transaction-level information.
+
+For customer-level analysis,only records with a valid `CustomerID` were used.
+
+---
+
+## Data Cleaning Process
+
+The following rules were applied to create the analytical dataset:
+
+```text
+Original Dataset
+      |
+      v
+Remove Cancelled Invoices
+      |
+      v
+Remove Invalid Quantities
+      |
+      v
+Remove Invalid Unit Prices
+      |
+      v
+Remove Duplicate Records
+      |
+      v
+Create Revenue Column
+      |
+      v
+Clean Analytical Dataset
